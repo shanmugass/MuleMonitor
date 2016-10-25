@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://services.turner.com/architecture/frameworks/mule/2008/05" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://services.turner.com/architecture/frameworks/mule/2008/05" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://services.turner.com/architecture/frameworks/mule/2008/05/Imports">
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd0" namespace="http://services.turner.com/architecture/frameworks/mule/2008/05" />
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd3" namespace="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" />
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd2" namespace="http://schemas.turner.com/architecture/frameworks/mule/2008/05" />
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" />
+      <xsd:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllTaskControllersRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTaskControllersRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTaskControllersRequestMessage_Headers">
+    <wsdl:part xmlns:q1="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q1:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTaskControllersResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTaskControllersResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTaskControllersResponseMessage_Headers">
+    <wsdl:part xmlns:q2="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q2:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:RegisterTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q3="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q3:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTaskControllerResponseMessage">
+    <wsdl:part name="parameters" element="tns:RegisterTaskControllerResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="RegisterTaskControllerResponseMessage_Headers">
+    <wsdl:part xmlns:q4="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q4:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:UnregisterTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q5="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q5:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterTaskControllerResponseMessage">
+    <wsdl:part name="parameters" element="tns:UnregisterTaskControllerResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterTaskControllerResponseMessage_Headers">
+    <wsdl:part xmlns:q6="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q6:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q7="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q7:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerResponseMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControllerResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerResponseMessage_Headers">
+    <wsdl:part xmlns:q8="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q8:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q9="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q9:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTaskControllerResponseMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTaskControllerResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveTaskControllerResponseMessage_Headers">
+    <wsdl:part xmlns:q10="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q10:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerStatusRequestMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControllerStatusRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerStatusRequestMessage_Headers">
+    <wsdl:part xmlns:q11="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q11:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerStatusResponseMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTaskControllerStatusResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskControllerStatusResponseMessage_Headers">
+    <wsdl:part xmlns:q12="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q12:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseTasksForTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseTasksForTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="ReleaseTasksForTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q13="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q13:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISystemService_ReleaseTasksForTaskController_OutputMessage" />
+  <wsdl:message name="GetNextTaskRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskRequestMessage_Headers">
+    <wsdl:part xmlns:q14="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q14:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskResponseMessage_Headers">
+    <wsdl:part xmlns:q15="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q15:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreproccessingRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskForPreproccessingRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreproccessingRequestMessage_Headers">
+    <wsdl:part xmlns:q16="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q16:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreproccessingResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskForPreproccessingResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreproccessingResponseMessage_Headers">
+    <wsdl:part xmlns:q17="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q17:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreemptionRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskForPreemptionRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreemptionRequestMessage_Headers">
+    <wsdl:part xmlns:q18="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q18:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreemptionResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetNextTaskForPreemptionResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetNextTaskForPreemptionResponseMessage_Headers">
+    <wsdl:part xmlns:q19="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q19:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AssignTaskRequestMessage">
+    <wsdl:part name="parameters" element="tns:AssignTaskRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="AssignTaskRequestMessage_Headers">
+    <wsdl:part xmlns:q20="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q20:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="AssignTaskResponseMessage">
+    <wsdl:part name="parameters" element="tns:AssignTaskResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="AssignTaskResponseMessage_Headers">
+    <wsdl:part xmlns:q21="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q21:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrioritizeTasksRequestMessage">
+    <wsdl:part name="parameters" element="tns:PrioritizeTasksRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="PrioritizeTasksRequestMessage_Headers">
+    <wsdl:part xmlns:q22="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q22:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="PrioritizeTasksResponseMessage">
+    <wsdl:part name="parameters" element="tns:PrioritizeTasksResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="PrioritizeTasksResponseMessage_Headers">
+    <wsdl:part xmlns:q23="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q23:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskByControllerAndStatusRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskByControllerAndStatusRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskByControllerAndStatusRequestMessage_Headers">
+    <wsdl:part xmlns:q24="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q24:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskByControllerAndStatusResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskByControllerAndStatusResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskByControllerAndStatusResponseMessage_Headers">
+    <wsdl:part xmlns:q25="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q25:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessAssignmentForTaskControllerRequestMessage">
+    <wsdl:part name="parameters" element="tns:ReprocessAssignmentForTaskControllerRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="ReprocessAssignmentForTaskControllerRequestMessage_Headers">
+    <wsdl:part xmlns:q26="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q26:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddQueueRequestMessage">
+    <wsdl:part name="parameters" element="tns:AddQueueRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="AddQueueRequestMessage_Headers">
+    <wsdl:part xmlns:q27="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q27:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddQueueResponseMessage">
+    <wsdl:part name="parameters" element="tns:AddQueueResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="AddQueueResponseMessage_Headers">
+    <wsdl:part xmlns:q28="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q28:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueRequestMessage_Headers">
+    <wsdl:part xmlns:q29="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q29:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetQueueResponseMessage_Headers">
+    <wsdl:part xmlns:q30="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q30:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQueuesRequestMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueuesRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQueuesRequestMessage_Headers">
+    <wsdl:part xmlns:q31="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q31:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQueuesResponseMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQueuesResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetAllQueuesResponseMessage_Headers">
+    <wsdl:part xmlns:q32="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q32:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveQueueRequestMessage">
+    <wsdl:part name="parameters" element="tns:RemoveQueueRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="RemoveQueueRequestMessage_Headers">
+    <wsdl:part xmlns:q33="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q33:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISystemService_RemoveQueue_OutputMessage" />
+  <wsdl:message name="UpdateQueueRequestMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQueueRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpdateQueueRequestMessage_Headers">
+    <wsdl:part xmlns:q34="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q34:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISystemService_UpdateQueue_OutputMessage" />
+  <wsdl:message name="SearchTasksRequestMessage">
+    <wsdl:part name="parameters" element="tns:SearchTasksRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="SearchTasksRequestMessage_Headers">
+    <wsdl:part xmlns:q35="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q35:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchTasksResponseMessage">
+    <wsdl:part name="parameters" element="tns:SearchTasksResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="SearchTasksResponseMessage_Headers">
+    <wsdl:part xmlns:q36="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q36:MetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetryTaskRequestMessage">
+    <wsdl:part name="parameters" element="tns:RetryTaskRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="RetryTaskRequestMessage_Headers">
+    <wsdl:part xmlns:q37="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaRequest" element="q37:MetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="RetryTaskResponseMessage">
+    <wsdl:part name="parameters" element="tns:RetryTaskResponseMessage" />
+  </wsdl:message>
+  <wsdl:message name="RetryTaskResponseMessage_Headers">
+    <wsdl:part xmlns:q38="http://schemas.turner.com/architecture/frameworks/tephra/2006/01/" name="MetaResponse" element="q38:MetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISystemService">
+    <wsdl:operation name="GetAllTaskControllers">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetAllTaskControllers" name="GetAllTaskControllersRequestMessage" message="tns:GetAllTaskControllersRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetAllTaskControllersResponse" name="GetAllTaskControllersResponseMessage" message="tns:GetAllTaskControllersResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RegisterTaskController" name="RegisterTaskControllerRequestMessage" message="tns:RegisterTaskControllerRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RegisterTaskControllerResponse" name="RegisterTaskControllerResponseMessage" message="tns:RegisterTaskControllerResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UnregisterTaskController" name="UnregisterTaskControllerRequestMessage" message="tns:UnregisterTaskControllerRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UnregisterTaskControllerResponse" name="UnregisterTaskControllerResponseMessage" message="tns:UnregisterTaskControllerResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateTaskController" name="UpdateTaskControllerRequestMessage" message="tns:UpdateTaskControllerRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateTaskControllerResponse" name="UpdateTaskControllerResponseMessage" message="tns:UpdateTaskControllerResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RemoveTaskController" name="RemoveTaskControllerRequestMessage" message="tns:RemoveTaskControllerRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RemoveTaskControllerResponse" name="RemoveTaskControllerResponseMessage" message="tns:RemoveTaskControllerResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskControllerStatus">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateTaskControllerStatus" name="UpdateTaskControllerStatusRequestMessage" message="tns:UpdateTaskControllerStatusRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateTaskControllerStatusResponse" name="UpdateTaskControllerStatusResponseMessage" message="tns:UpdateTaskControllerStatusResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseTasksForTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/ReleaseTasksForTaskController" name="ReleaseTasksForTaskControllerRequestMessage" message="tns:ReleaseTasksForTaskControllerRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/ReleaseTasksForTaskControllerResponse" message="tns:ISystemService_ReleaseTasksForTaskController_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextTask">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTask" name="GetNextTaskRequestMessage" message="tns:GetNextTaskRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTaskResponse" name="GetNextTaskResponseMessage" message="tns:GetNextTaskResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextTaskForPreproccessing">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTaskForPreproccessing" name="GetNextTaskForPreproccessingRequestMessage" message="tns:GetNextTaskForPreproccessingRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTaskForPreproccessingResponse" name="GetNextTaskForPreproccessingResponseMessage" message="tns:GetNextTaskForPreproccessingResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextTaskForPreemption">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTaskForPreemption" name="GetNextTaskForPreemptionRequestMessage" message="tns:GetNextTaskForPreemptionRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetNextTaskForPreemptionResponse" name="GetNextTaskForPreemptionResponseMessage" message="tns:GetNextTaskForPreemptionResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssignTasks">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/AssignTasks" name="AssignTaskRequestMessage" message="tns:AssignTaskRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/AssignTasksResponse" name="AssignTaskResponseMessage" message="tns:AssignTaskResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrioritizeTasks">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/PrioritizeTasks" name="PrioritizeTasksRequestMessage" message="tns:PrioritizeTasksRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/PrioritizeTasksResponse" name="PrioritizeTasksResponseMessage" message="tns:PrioritizeTasksResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByControllerAndStatus">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetTasksByControllerAndStatus" name="GetTaskByControllerAndStatusRequestMessage" message="tns:GetTaskByControllerAndStatusRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetTasksByControllerAndStatusResponse" name="GetTaskByControllerAndStatusResponseMessage" message="tns:GetTaskByControllerAndStatusResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReprocessAssignmentForTaskController">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/ReprocessAssignmentForTaskController" name="ReprocessAssignmentForTaskControllerRequestMessage" message="tns:ReprocessAssignmentForTaskControllerRequestMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQueue">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/AddQueue" name="AddQueueRequestMessage" message="tns:AddQueueRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/AddQueueResponse" name="AddQueueResponseMessage" message="tns:AddQueueResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueue">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetQueue" name="GetQueueRequestMessage" message="tns:GetQueueRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetQueueResponse" name="GetQueueResponseMessage" message="tns:GetQueueResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQueues">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetAllQueues" name="GetAllQueuesRequestMessage" message="tns:GetAllQueuesRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/GetAllQueuesResponse" name="GetAllQueuesResponseMessage" message="tns:GetAllQueuesResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveQueue">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RemoveQueue" name="RemoveQueueRequestMessage" message="tns:RemoveQueueRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RemoveQueueResponse" message="tns:ISystemService_RemoveQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQueue">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateQueue" name="UpdateQueueRequestMessage" message="tns:UpdateQueueRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/UpdateQueueResponse" message="tns:ISystemService_UpdateQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTasks">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/SearchTasks" name="SearchTasksRequestMessage" message="tns:SearchTasksRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/SearchTasksResponse" name="SearchTasksResponseMessage" message="tns:SearchTasksResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetryTask">
+      <wsdl:input wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RetryTask" name="RetryTaskRequestMessage" message="tns:RetryTaskRequestMessage" />
+      <wsdl:output wsaw:Action="http://services.turner.com/architecture/frameworks/mule/2008/05/ISystemService/RetryTaskResponse" name="RetryTaskResponseMessage" message="tns:RetryTaskResponseMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.turner.com/architecture/frameworks/mule/2008/05" elementFormDefault="qualified" targetNamespace="http://services.turner.com/architecture/frameworks/mule/2008/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd2" namespace="http://schemas.turner.com/architecture/frameworks/mule/2008/05" />
+  <xs:element name="GetAllTaskControllersRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q1:GetAllTaskControllersRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllTaskControllersResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q2:GetAllTaskControllersResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" ref="q3:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterTaskControllerResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" ref="q4:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnregisterTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q5:UnregisterTaskControllerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnregisterTaskControllerResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q6:UnregisterTaskControllerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q7:UpdateTaskControllerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskControllerResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q8:UpdateTaskControllerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q9:RemoveTaskControllerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTaskControllerResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q10:RemoveTaskControllerResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskControllerStatusRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q11:UpdateTaskControllerStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTaskControllerStatusResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q12:UpdateTaskControllerStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseTasksForTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q13:ReleaseTasksForTaskControllerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q14:GetNextTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q15:GetNextTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskForPreproccessingRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q16:GetNextTaskForPreproccessingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskForPreproccessingResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q17:GetNextTaskForPreproccessingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskForPreemptionRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q18:GetNextTaskForPreemptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextTaskForPreemptionResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q19:GetNextTaskForPreemptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignTaskRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q20:AssignTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignTaskResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q21:AssignTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrioritizeTasksRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q22:PrioritizeTasksRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrioritizeTasksResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q23:PrioritizeTasksResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskByControllerAndStatusRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q24:GetTaskByControllerAndStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTaskByControllerAndStatusResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q25:GetTaskByControllerAndStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReprocessAssignmentForTaskControllerRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q26:ReprocessAssignmentForTaskControllerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQueueRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q27:AddQueueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddQueueResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q28:AddQueueResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q29:GetQueueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q30:GetQueueResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQueuesRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q31:GetAllQueuesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQueuesResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q32:GetAllQueuesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveQueueRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q33:RemoveQueueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateQueueRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q34:UpdateQueueRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTasksRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q35:SearchTasksRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTasksResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q36:SearchTasksResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetryTaskRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Request" nillable="true" type="q37:RetryTaskRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetryTaskResponseMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.turner.com/architecture/frameworks/mule/2008/05" minOccurs="0" name="Response" nillable="true" type="q38:RetryTaskResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

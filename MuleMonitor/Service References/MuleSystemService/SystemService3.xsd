@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd2" namespace="http://schemas.turner.com/architecture/frameworks/mule/2008/05" />
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfTaskController">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskController" nillable="true" type="tns:TaskController" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskController" nillable="true" type="tns:ArrayOfTaskController" />
+  <xs:complexType name="TaskController">
+    <xs:sequence>
+      <xs:element name="_x003C_ConcurrentTaskProcesses_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_CreatedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CreatedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Description_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Descriptors_x003E_k__BackingField" nillable="true" type="tns:ArrayOfDescriptor" />
+      <xs:element name="_x003C_IsOnline_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsSuspended_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsTaskProcessor_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_ModifiedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ModifiedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_PollIntervalInSeconds_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PreemptionEnabled_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_QueueName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ServerName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ServiceEndpoint_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ServiceName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_TaskControllerId_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskController" nillable="true" type="tns:TaskController" />
+  <xs:complexType name="ArrayOfDescriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Descriptor" nillable="true" type="tns:Descriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDescriptor" nillable="true" type="tns:ArrayOfDescriptor" />
+  <xs:complexType name="Descriptor">
+    <xs:sequence>
+      <xs:element name="_x003C_Dedicated_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Name_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Value_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Descriptor" nillable="true" type="tns:Descriptor" />
+  <xs:complexType name="VirtualQueueConfiguration">
+    <xs:sequence>
+      <xs:element name="_x003C_CreatedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CreatedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ModifiedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ModifiedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_NextQueueConfiguration_x003E_k__BackingField" nillable="true" type="xs:anyType" />
+      <xs:element name="_x003C_NextQueueName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_QueueDescription_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_QueueId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_QueueName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_TaskPreprocessorTypeName_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VirtualQueueConfiguration" nillable="true" type="tns:VirtualQueueConfiguration" />
+  <xs:complexType name="VirtualQueueConfigurationWithSchedules">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VirtualQueueConfiguration">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.turner.com/architecture/frameworks/mule/2008/05" name="_x003C_Schedules_x003E_k__BackingField" nillable="true" type="q1:ArrayOfScheduleContract" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VirtualQueueConfigurationWithSchedules" nillable="true" type="tns:VirtualQueueConfigurationWithSchedules" />
+  <xs:simpleType name="TaskStatusType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="New" />
+          <xs:enumeration value="ProcessingPreemption" />
+          <xs:enumeration value="ProcessedPreemption" />
+          <xs:enumeration value="Preempting">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProcessingAssignment">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProcessedAssignment">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Assigning">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProcessingPrioritization">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProcessedPrioritization">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Prioritizing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">96</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Preprocessing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">126</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProcessingFailed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ReadyForExecution">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Executing">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Cancelling">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Cancelled">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Failed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Completed">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8192</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PostCompletedCancel">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16384</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Slated">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65536</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Pending">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32768</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Finished">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30848</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="NotFinished">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">768</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="All">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65535</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="TaskStatusType" nillable="true" type="tns:TaskStatusType" />
+  <xs:complexType name="ArrayOfVirtualQueueConfigurationWithSchedules">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VirtualQueueConfigurationWithSchedules" nillable="true" type="tns:VirtualQueueConfigurationWithSchedules" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVirtualQueueConfigurationWithSchedules" nillable="true" type="tns:ArrayOfVirtualQueueConfigurationWithSchedules" />
+  <xs:complexType name="TaskSearchCriteria">
+    <xs:sequence>
+      <xs:element name="_x003C_ContextDataContains_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CorrelationId_x003E_k__BackingField" type="ser:guid" />
+      <xs:element name="_x003C_CreatedAfter_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CreatedBefore_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_MulePackTypeName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_QueueName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_StatusTypes_x003E_k__BackingField" type="tns:TaskStatusType" />
+      <xs:element name="_x003C_TaskId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_TaskTemplateId_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskSearchCriteria" nillable="true" type="tns:TaskSearchCriteria" />
+  <xs:complexType name="ArrayOfCoupleOfTaskItemPriorityInformation4MbstREA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoupleOfTaskItemPriorityInformation4MbstREA" nillable="true" type="tns:CoupleOfTaskItemPriorityInformation4MbstREA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoupleOfTaskItemPriorityInformation4MbstREA" nillable="true" type="tns:ArrayOfCoupleOfTaskItemPriorityInformation4MbstREA" />
+  <xs:complexType name="CoupleOfTaskItemPriorityInformation4MbstREA">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="CoupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Task" Namespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" />
+          <GenericParameter Name="ItemPriorityInformation" Namespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="_x003C_Left_x003E_k__BackingField" nillable="true" type="tns:Task" />
+      <xs:element name="_x003C_Right_x003E_k__BackingField" nillable="true" type="tns:ItemPriorityInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoupleOfTaskItemPriorityInformation4MbstREA" nillable="true" type="tns:CoupleOfTaskItemPriorityInformation4MbstREA" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_validationErrors" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="_x003C_Comment_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ContextData_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CorrelationId_x003E_k__BackingField" type="ser:guid" />
+      <xs:element name="_x003C_CreatedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CreatedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Descriptors_x003E_k__BackingField" nillable="true" type="tns:ArrayOfDescriptor" />
+      <xs:element name="_x003C_Errors_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ExecuteAttempts_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ExecutedTaskControllerId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_ExecutionEnd_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ExecutionStart_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_IsDelivered_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_ModifiedDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ModifiedUserId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MulePackTypeName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_NextProcessDateTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_NotificationTypeName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Parameters_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_x003C_PreprocessTask_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_PreprocessedTaskProcessorId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PreprocessingEnd_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_PreprocessingStart_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_ResultTypeName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Result_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_x003C_Status_x003E_k__BackingField" type="tns:TaskStatusType" />
+      <xs:element name="_x003C_TaskControllerId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_TaskId_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_TaskTemplateId_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="ItemPriorityInformation">
+    <xs:sequence>
+      <xs:element name="_x003C_AssociatedQueueID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_AssociatedTaskID_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Rank_x003E_k__BackingField" type="tns:PriorityRank" />
+      <xs:element name="_x003C_Weight_x003E_k__BackingField" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemPriorityInformation" nillable="true" type="tns:ItemPriorityInformation" />
+  <xs:simpleType name="PriorityRank">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="One" />
+      <xs:enumeration value="Two" />
+      <xs:enumeration value="Three" />
+      <xs:enumeration value="Four" />
+      <xs:enumeration value="Five" />
+      <xs:enumeration value="Six" />
+      <xs:enumeration value="Seven" />
+      <xs:enumeration value="Eight" />
+      <xs:enumeration value="Nine" />
+      <xs:enumeration value="Ten" />
+      <xs:enumeration value="Default">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriorityRank" nillable="true" type="tns:PriorityRank" />
+  <xs:simpleType name="RetryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Preprocessing" />
+      <xs:enumeration value="Execution" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RetryType" nillable="true" type="tns:RetryType" />
+</xs:schema>

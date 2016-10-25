@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4b52582e-1feb-4061-baef-b1bb140ca779" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://mule-turniverse/Mule.SystemService/SystemService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SystemService.xsd" MetadataType="Schema" ID="e840a65e-ccc0-4ad6-8af1-b436735afe15" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SystemService1.xsd" MetadataType="Schema" ID="a8815c24-e9c8-4c33-8a70-a37c5fdfa669" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SystemService2.xsd" MetadataType="Schema" ID="16013bd1-526b-44c1-bb7e-6eb60a5248d5" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SystemService3.xsd" MetadataType="Schema" ID="a46a1c23-ad6a-4fe8-8a06-6413f5c28b77" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SystemService4.xsd" MetadataType="Schema" ID="5109eccb-3a84-4dcb-b1b7-913122aceed8" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SystemService.wsdl" MetadataType="Wsdl" ID="b944ec6a-8f6e-476e-9cc0-bfdde7042910" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SystemService5.xsd" MetadataType="Schema" ID="d99db536-874a-4375-82db-b2e2ea47ccf9" SourceId="1" SourceUrl="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SystemService1.wsdl" MetadataType="Wsdl" ID="a066d114-efbb-497d-823a-ef9c2ee826a9" SourceId="1" SourceUrl="http://mule-turniverse/Mule.SystemService/SystemService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

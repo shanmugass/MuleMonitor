@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.turner.com/architecture/frameworks/mule/2008/05" elementFormDefault="qualified" targetNamespace="http://schemas.turner.com/architecture/frameworks/mule/2008/05" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" />
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://mssondsch02.turner.com/Mule.SystemService/SystemService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetAllTaskControllersRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GetAllTaskControllersRequest" nillable="true" type="tns:GetAllTaskControllersRequest" />
+  <xs:complexType name="GetAllTaskControllersResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="TaskControllers" nillable="true" type="q1:ArrayOfTaskController" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllTaskControllersResponse" nillable="true" type="tns:GetAllTaskControllersResponse" />
+  <xs:complexType name="RegisterTaskControllerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConcurrentTaskProcesses" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descriptors" nillable="true" type="tns:ArrayOfDescriptorContract" />
+      <xs:element minOccurs="0" name="IsTaskProcessor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PollIntervalInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="PreemptionEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QueueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceEndpoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterTaskControllerRequest" nillable="true" type="tns:RegisterTaskControllerRequest" />
+  <xs:complexType name="ArrayOfDescriptorContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DescriptorContract" nillable="true" type="tns:DescriptorContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDescriptorContract" nillable="true" type="tns:ArrayOfDescriptorContract" />
+  <xs:complexType name="DescriptorContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dedicated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DescriptorContract" nillable="true" type="tns:DescriptorContract" />
+  <xs:element name="Request" nillable="true" type="tns:RegisterTaskControllerRequest" />
+  <xs:complexType name="RegisterTaskControllerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterTaskControllerResponse" nillable="true" type="tns:RegisterTaskControllerResponse" />
+  <xs:element name="Response" nillable="true" type="tns:RegisterTaskControllerResponse" />
+  <xs:complexType name="UnregisterTaskControllerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnregisterTaskControllerRequest" nillable="true" type="tns:UnregisterTaskControllerRequest" />
+  <xs:complexType name="UnregisterTaskControllerResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="UnregisterTaskControllerResponse" nillable="true" type="tns:UnregisterTaskControllerResponse" />
+  <xs:complexType name="UpdateTaskControllerRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="TaskController" nillable="true" type="q2:TaskController" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateTaskControllerRequest" nillable="true" type="tns:UpdateTaskControllerRequest" />
+  <xs:complexType name="UpdateTaskControllerResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="UpdateTaskControllerResponse" nillable="true" type="tns:UpdateTaskControllerResponse" />
+  <xs:complexType name="RemoveTaskControllerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveTaskControllerRequest" nillable="true" type="tns:RemoveTaskControllerRequest" />
+  <xs:complexType name="RemoveTaskControllerResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RemoveTaskControllerResponse" nillable="true" type="tns:RemoveTaskControllerResponse" />
+  <xs:complexType name="UpdateTaskControllerStatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Online" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Suspended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateTaskControllerStatusRequest" nillable="true" type="tns:UpdateTaskControllerStatusRequest" />
+  <xs:complexType name="UpdateTaskControllerStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConcurrentTaskProcesses" type="xs:int" />
+      <xs:element minOccurs="0" name="Descriptors" nillable="true" type="tns:ArrayOfDescriptorContract" />
+      <xs:element minOccurs="0" name="PollIntervalInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="QueueName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceEndpoint" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateTaskControllerStatusResponse" nillable="true" type="tns:UpdateTaskControllerStatusResponse" />
+  <xs:complexType name="ReleaseTasksForTaskControllerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReleaseTasksForTaskControllerRequest" nillable="true" type="tns:ReleaseTasksForTaskControllerRequest" />
+  <xs:complexType name="GetNextTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskRequest" nillable="true" type="tns:GetNextTaskRequest" />
+  <xs:complexType name="GetNextTaskResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NextTask" nillable="true" type="tns:TaskContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskResponse" nillable="true" type="tns:GetNextTaskResponse" />
+  <xs:complexType name="TaskContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContextData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorrelationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CreatedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Delivered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Descriptors" nillable="true" type="tns:ArrayOfDescriptorContract" />
+      <xs:element minOccurs="0" name="Errors" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExecutedTaskControllerId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExecutionAttempts" type="xs:int" />
+      <xs:element minOccurs="0" name="ExecutionEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExecutionStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedUserId" nillable="true" type="xs:string" />
+      <xs:element name="MulePackTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextProcessDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PreprocessedTaskProcessorId" type="xs:int" />
+      <xs:element minOccurs="0" name="PreprocessingEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PreprocessingStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ResultTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SkipPreprocessing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Status" type="tns:TaskStatusTypeContract" />
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskId" type="xs:long" />
+      <xs:element minOccurs="0" name="NotificationTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskTemplateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskContract" nillable="true" type="tns:TaskContract" />
+  <xs:simpleType name="TaskStatusTypeContract">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="New">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessingPreemption">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessedPreemption">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Preempting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessingAssignment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessedAssignment">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Assigning">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessingPrioritization">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessedPrioritization">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Prioritizing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">96</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Preprocessing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">126</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProcessingFailed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ReadyForExecution">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">256</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Executing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancelling">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancelled">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2048</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Failed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Completed">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8192</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PostCompletedCancel">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16384</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Slated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65536</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32768</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Finished">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30848</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotFinished">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">768</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="All">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65535</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaskStatusTypeContract" nillable="true" type="tns:TaskStatusTypeContract" />
+  <xs:complexType name="GetNextTaskForPreproccessingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskForPreproccessingRequest" nillable="true" type="tns:GetNextTaskForPreproccessingRequest" />
+  <xs:complexType name="GetNextTaskForPreproccessingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NextTask" nillable="true" type="tns:TaskContract" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="QueueConfiguration" nillable="true" type="q3:VirtualQueueConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskForPreproccessingResponse" nillable="true" type="tns:GetNextTaskForPreproccessingResponse" />
+  <xs:complexType name="ArrayOfScheduleContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScheduleContract" nillable="true" type="tns:ScheduleContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScheduleContract" nillable="true" type="tns:ArrayOfScheduleContract" />
+  <xs:complexType name="ScheduleContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element name="CreatedDateTime" type="xs:dateTime" />
+      <xs:element name="CreatedUserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element name="ModifiedDateTime" type="xs:dateTime" />
+      <xs:element name="ModifiedUserId" nillable="true" type="xs:string" />
+      <xs:element name="RecurrencePattern" nillable="true" type="xs:string" />
+      <xs:element name="ScheduleId" type="xs:int" />
+      <xs:element name="StartDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TaskTemplateHeaders" nillable="true" type="tns:ArrayOfTaskTemplateHeaderContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScheduleContract" nillable="true" type="tns:ScheduleContract" />
+  <xs:complexType name="ArrayOfTaskTemplateHeaderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TaskTemplateHeaderContract" nillable="true" type="tns:TaskTemplateHeaderContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTaskTemplateHeaderContract" nillable="true" type="tns:ArrayOfTaskTemplateHeaderContract" />
+  <xs:complexType name="TaskTemplateHeaderContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MulePackTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskTemplateId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TaskTemplateHeaderContract" nillable="true" type="tns:TaskTemplateHeaderContract" />
+  <xs:complexType name="GetNextTaskForPreemptionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskForPreemptionRequest" nillable="true" type="tns:GetNextTaskForPreemptionRequest" />
+  <xs:complexType name="GetNextTaskForPreemptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NextTask" nillable="true" type="tns:TaskContract" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="QueueConfiguration" nillable="true" type="q4:VirtualQueueConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNextTaskForPreemptionResponse" nillable="true" type="tns:GetNextTaskForPreemptionResponse" />
+  <xs:complexType name="AssignTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assignments" nillable="true" type="tns:ArrayOfAssignmentContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignTaskRequest" nillable="true" type="tns:AssignTaskRequest" />
+  <xs:complexType name="ArrayOfAssignmentContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssignmentContract" nillable="true" type="tns:AssignmentContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssignmentContract" nillable="true" type="tns:ArrayOfAssignmentContract" />
+  <xs:complexType name="AssignmentContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerID" type="xs:int" />
+      <xs:element minOccurs="0" name="TaskID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssignmentContract" nillable="true" type="tns:AssignmentContract" />
+  <xs:complexType name="AssignTaskResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AssignTaskResponse" nillable="true" type="tns:AssignTaskResponse" />
+  <xs:complexType name="PrioritizeTasksRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Priorities" nillable="true" type="tns:ArrayOfItemPriorityInformationContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrioritizeTasksRequest" nillable="true" type="tns:PrioritizeTasksRequest" />
+  <xs:complexType name="ArrayOfItemPriorityInformationContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemPriorityInformationContract" nillable="true" type="tns:ItemPriorityInformationContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemPriorityInformationContract" nillable="true" type="tns:ArrayOfItemPriorityInformationContract" />
+  <xs:complexType name="ItemPriorityInformationContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssociatedQueueID" type="xs:int" />
+      <xs:element minOccurs="0" name="AssociatedTaskID" type="xs:long" />
+      <xs:element minOccurs="0" name="Rank" type="tns:PriorityRankContract" />
+      <xs:element minOccurs="0" name="Weight" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ItemPriorityInformationContract" nillable="true" type="tns:ItemPriorityInformationContract" />
+  <xs:simpleType name="PriorityRankContract">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="One" />
+      <xs:enumeration value="Two" />
+      <xs:enumeration value="Three" />
+      <xs:enumeration value="Four" />
+      <xs:enumeration value="Five" />
+      <xs:enumeration value="Six" />
+      <xs:enumeration value="Seven" />
+      <xs:enumeration value="Eight" />
+      <xs:enumeration value="Nine" />
+      <xs:enumeration value="Ten" />
+      <xs:enumeration value="Default">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PriorityRankContract" nillable="true" type="tns:PriorityRankContract" />
+  <xs:complexType name="PrioritizeTasksResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="PrioritizeTasksResponse" nillable="true" type="tns:PrioritizeTasksResponse" />
+  <xs:complexType name="GetTaskByControllerAndStatusRequest">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Status" type="q5:TaskStatusType" />
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTaskByControllerAndStatusRequest" nillable="true" type="tns:GetTaskByControllerAndStatusRequest" />
+  <xs:complexType name="GetTaskByControllerAndStatusResponse">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TaskIds" nillable="true" type="q6:ArrayOflong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTaskByControllerAndStatusResponse" nillable="true" type="tns:GetTaskByControllerAndStatusResponse" />
+  <xs:complexType name="ReprocessAssignmentForTaskControllerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskControllerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReprocessAssignmentForTaskControllerRequest" nillable="true" type="tns:ReprocessAssignmentForTaskControllerRequest" />
+  <xs:complexType name="AddQueueRequest">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Queue" nillable="true" type="q7:VirtualQueueConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddQueueRequest" nillable="true" type="tns:AddQueueRequest" />
+  <xs:complexType name="AddQueueResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddQueueResponse" nillable="true" type="tns:AddQueueResponse" />
+  <xs:complexType name="GetQueueRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueId" type="xs:int" />
+      <xs:element minOccurs="0" name="QueueName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetQueueRequest" nillable="true" type="tns:GetQueueRequest" />
+  <xs:complexType name="GetQueueResponse">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="QueueConfiguration" nillable="true" type="q8:VirtualQueueConfigurationWithSchedules" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetQueueResponse" nillable="true" type="tns:GetQueueResponse" />
+  <xs:complexType name="GetAllQueuesRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GetAllQueuesRequest" nillable="true" type="tns:GetAllQueuesRequest" />
+  <xs:complexType name="GetAllQueuesResponse">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Queues" nillable="true" type="q9:ArrayOfVirtualQueueConfigurationWithSchedules" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAllQueuesResponse" nillable="true" type="tns:GetAllQueuesResponse" />
+  <xs:complexType name="RemoveQueueRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QueueId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemoveQueueRequest" nillable="true" type="tns:RemoveQueueRequest" />
+  <xs:complexType name="UpdateQueueRequest">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Queue" nillable="true" type="q10:VirtualQueueConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateQueueRequest" nillable="true" type="tns:UpdateQueueRequest" />
+  <xs:complexType name="SearchTasksRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxResultCount" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="SearchCriteria" nillable="true" type="q11:TaskSearchCriteria" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchTasksRequest" nillable="true" type="tns:SearchTasksRequest" />
+  <xs:complexType name="SearchTasksResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualResultCount" type="xs:int" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Tasks" nillable="true" type="q12:ArrayOfCoupleOfTaskItemPriorityInformation4MbstREA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchTasksResponse" nillable="true" type="tns:SearchTasksResponse" />
+  <xs:complexType name="RetryTaskRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TaskId" type="xs:long" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Turner.Architecture.Frameworks.Mule" minOccurs="0" name="Type" type="q13:RetryType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RetryTaskRequest" nillable="true" type="tns:RetryTaskRequest" />
+  <xs:complexType name="RetryTaskResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RetryTaskResponse" nillable="true" type="tns:RetryTaskResponse" />
+</xs:schema>
