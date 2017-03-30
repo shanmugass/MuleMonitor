@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
 using System.Net.Mail;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using MuleMonitor.MuleSystemService;
-using System.Configuration;
 
 namespace MuleMonitor
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
             var client = new SystemServiceClient();
             try
             {
@@ -22,25 +19,27 @@ namespace MuleMonitor
                 client.GetAllTaskControllers(new MetaRequest(), new GetAllTaskControllersRequest(), out response);
 
                 foreach (var muleTask in response.TaskControllers)
-                {
-                    if (!muleTask.IsOnlinek__BackingField)
+                    if (!muleTask.IsOnlinek__BackingField || muleTask.IsSuspendedk__BackingField)
                     {
                         SendEmailToUsers(muleTask);
                         break;
                     }
-                }
-
             }
             catch (Exception)
             {
-                SendNotificationEmail(string.Format("Unable to reach mule server: {0}, please check and restart all three mule services.", client.Endpoint.ListenUri));
+                SendNotificationEmail(
+                    string.Format(
+                        "Unable to reach Turniverse mule server: {0}, please check and restart all three mule services.",
+                        client.Endpoint.ListenUri));
             }
         }
 
         public static void SendEmailToUsers(TaskController muleTask)
         {
-            SendNotificationEmail(string.Format("Mule service is Turned Off: {0}, please check and restart all three mule services.", muleTask.ServiceEndpointk__BackingField));
-
+            SendNotificationEmail(
+                string.Format(
+                    "Turniverse Mule service was Turned Off: {0}, please check and restart all three mule services.",
+                    muleTask.ServiceEndpointk__BackingField));
         }
 
 
@@ -52,15 +51,16 @@ namespace MuleMonitor
             var stringBuilder = new StringBuilder();
 
             message.From = new MailAddress("Turniverse@Turner.com");
-            message.To.Add(new MailAddress(ConfigurationManager.AppSettings["MailTo"]));
-            message.CC.Add(new MailAddress(ConfigurationManager.AppSettings["MailCC"]));
+
+            AddReceipient(message.To, ConfigurationManager.AppSettings["MailTo"]);
+            AddReceipient(message.CC, ConfigurationManager.AppSettings["MailCC"]);
 
             message.BodyEncoding = Encoding.ASCII;
             message.IsBodyHtml = true;
             message.Priority = MailPriority.High;
             message.Subject = "Mule Server is down.";
 
-            stringBuilder.Append("Hi,<br><br>");
+            stringBuilder.Append("Hello Everyone, <br><br>");
             stringBuilder.Append(mailMessage);
             stringBuilder.Append("<br><br>Thanks,<br>Turniverse Team");
 
@@ -68,6 +68,15 @@ namespace MuleMonitor
 
             var client = new SmtpClient(server);
             client.Send(message);
+        }
+
+        private static void AddReceipient(MailAddressCollection messageTo, string recepients)
+        {
+            var recepientArray = Regex.Split(recepients, ",");
+
+            foreach (var recepient in recepientArray)
+                if (recepient.Contains("@"))
+                    messageTo.Add(recepient.Trim());
         }
     }
 }
